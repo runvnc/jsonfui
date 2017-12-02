@@ -19,7 +19,7 @@ if(process.stdin.isTTY && !program.args[0]) {
 }
 
 var json = '';
-var stream = getInputStream(resolveFilename(program.args[0]));
+var stream = getInputStream(resolveFilename('pnl.json');
 stream.on('data', function(data) { json += data.toString('utf-8'); });
 stream.on('end', start);
 stream.on('error', function(err) { die(new Error('No file found at ' + program.args[0])); });
