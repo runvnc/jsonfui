@@ -13,11 +13,6 @@ program
   .usage('<filename> (or read from stdin)')
   .parse(process.argv);
 
-if(process.stdin.isTTY && !program.args[0]) {
-  program.outputHelp();
-  process.exit(1);
-}
-
 var json = '';
 var stream = getInputStream(resolveFilename('pnl.json'));
 stream.on('data', function(data) { json += data.toString('utf-8'); });
